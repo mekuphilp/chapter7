@@ -77,7 +77,7 @@ def run(**args):
 		x += 1
 		event = in_file.read(EVENT_SIZE)
 		if(x%10 == 0):
-			return pressedKey
+			return str(pressedKey)
 
 	in_file.close()
 	
