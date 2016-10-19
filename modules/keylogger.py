@@ -77,7 +77,7 @@ def run(**args):
 			candidate = False
 		stop = time.clock()
 		event = in_file.read(EVENT_SIZE)
-		if(stop-start >= 5):
+		if(stop-start >= 25):
 			return str(pressedKey)
 		
 	in_file.close()
